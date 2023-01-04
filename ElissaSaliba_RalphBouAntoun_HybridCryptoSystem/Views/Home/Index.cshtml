@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <div class="text-center">
+        <h4 class="display-4">CENG625 project</h4>
+    </div>
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 text-center font-monospace">
+            In this project, we are implementing a hybrid cryptography system where users can share text in a safe a secure way.<br />
+            The sender at first needs to enter his/her email and the desired text to encrypt. The algorithms used for both encryption and 
+            decryption are AES and RSA.<br /><br />
+            In the decryption interface, the receiver has to fill a form where he/she is requested to enter the encrypted text, the encrypted key, and the private key.
+            The system will decrypt it and displays the plain text.<br /><br />
+            Ready to &nbsp;<a class="encrypt-color text-decoration-none" asp-controller="Encrypt" asp-action="Index"><i class="bi bi-key"></i>&nbsp; secure</a> your texts?
+            <br /><br />
+            Do you wish to &nbsp;<a class="text-decoration-none decrypt-color" asp-controller="Decrypt" asp-action="Index"><i class="bi bi-door-open-fill"></i>&nbsp;decrypt</a> a text you received?
+        </div>
+    </div>
+</div>
+

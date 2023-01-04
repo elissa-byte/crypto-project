@@ -1,0 +1,48 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.encrypt-btn:hover {
+    background-color: #1472c8 !important;
+}
+
+.encrypt-btn {
+    transition: 0.3s linear;
+}
+
+.decrypt-color,
+.encrypt-color,
+.encrypted-file {
+    transition: ease-in 0.2s;
+}
+
+    .encrypt-color,
+    .decrypt-color:hover {
+        color: #1472c8 !important;
+    }
+
+        .encrypt-color:hover,
+        .decrypt-color,
+        .encrypted-file :hover {
+            color: #f80f42 !important;
+        }
+
+.btn-zoom:hover {
+    transform: scale(1.2);
+    transition:linear 0.3s;
+}

@@ -1,0 +1,44 @@
+﻿@model Messages
+
+<div class="text-center">
+    <h1 class="display-4">Decrypt your text</h1>
+</div>
+<form id="decryptForm" method="post" asp-action="Decrypt">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 my-2">
+            <label asp-for="SenderEmail"></label>
+            <input asp-for="SenderEmail" class="form-control" />
+            <span asp-validation-for="SenderEmail" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="EncryptedText"></label>
+            <input asp-for="EncryptedText" class="form-control" />
+            <span asp-validation-for="EncryptedText" class="text-danger"></span>
+        </div>
+        <div class="col-md-12 my-2">
+            <label asp-for="EncryptedAESKey"></label>
+            <input asp-for="EncryptedAESKey" class="form-control" />
+            <span asp-validation-for="EncryptedAESKey" class="text-danger"></span>
+        </div>
+        <div class="col-md-12 my-2">
+            <label asp-for="PrivateKey"></label>
+            <input asp-for="PrivateKey" class="form-control" />
+            <span asp-validation-for="PrivateKey" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-md-6"></div>
+        <div class="col-md-4 text-end">
+            <button type="submit" class="encrypt-btn btn btn-primary" style="width:150px">Decrypt</button>
+        </div>
+    </div>
+</form>
+@if (TempData["decryptedText"] != null)
+{
+    <div class="container row justify-content-center">
+        <div class="col-md-12 text-center">
+            The original message is:
+            <div class="encrypted-file decrypt-color">@TempData["decryptedText"]</div>
+        </div>
+    </div>
+}

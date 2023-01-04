@@ -1,0 +1,36 @@
+﻿@model Messages
+<div class="text-center">
+    <h1 class="display-4">Encrypt your text</h1>
+</div>
+<form id="encryptForm" method="post" asp-action="Encrypt" class="mt-3">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-4">
+            <label asp-for="SenderEmail"></label>
+            <input asp-for="SenderEmail" class="form-control" />
+            <span asp-validation-for="SenderEmail" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="PlainText"></label>
+            <input asp-for="PlainText" class="form-control" />
+            <span asp-validation-for="PlainText" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="my-2 row justify-content-center">
+        <div class="col-md-6"></div>
+        <div class="col-md-4 text-end ">
+            <button type="submit" class="btn btn-primary encrypt-btn" style="width:150px">Encrypt</button>
+        </div>
+    </div>
+</form>
+@if(TempData["encryptedText"] != null ){
+    <div class="container row justify-content-center">
+        <div class="col-md-12 text-center">
+            Check all needed information for the encryption process:
+            @{
+                string filePath = TempData["filePath"] as string;
+            }
+            <div class="encrypted-file">@Html.ActionLink("Download file", "DownloadFile", new { fileName = filePath })</div>
+        </div>
+    </div>
+}
+
